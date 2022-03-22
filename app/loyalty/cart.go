@@ -20,10 +20,10 @@ type (
 		Price    uint
 	}
 
-	// Brand of medical products
+	// Brand of medical products.
 	Brand string
 
-	// Category of medical products
+	// Category of medical products.
 	Category string
 )
 

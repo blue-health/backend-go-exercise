@@ -7,18 +7,18 @@ import (
 	"github.com/go-chi/chi"
 )
 
-// Campaign web service handles issuing of the coupons
-type Campaign struct {
-	Campaigns []loyalty.Campaign
+// Campaign web service handles issuing of the coupons.
+type CampaignService struct {
+	campaigns []loyalty.Campaign
 }
 
 // Router return the HTTP router for the
 // REST API exposed by the campaign web service.
-func (c *Campaign) Router() *chi.Mux {
+func (s *CampaignService) Router() *chi.Mux {
 	r := chi.NewRouter()
 
 	r.Route("/coupons/{code}", func(r chi.Router) {
-		r.Post("/apply", c.applyCoupon)
+		r.Post("/apply", s.applyCoupon)
 	})
 
 	return r
@@ -28,4 +28,4 @@ func (c *Campaign) Router() *chi.Mux {
 // If the coupon was applied successfully, we return HTTP 200 and the new basket.
 // Otherise we return an application code 400-499, like HTTP 404 if coupon was not found.
 // You can assume the shopping basket is in the JSON request body.
-func (c *Campaign) applyCoupon(w http.ResponseWriter, r *http.Request) {}
+func (s *CampaignService) applyCoupon(w http.ResponseWriter, r *http.Request) {}
