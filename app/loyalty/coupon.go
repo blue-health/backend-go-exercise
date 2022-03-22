@@ -8,7 +8,7 @@ import (
 )
 
 type (
-	// Campaign can apply coupons that belong to it
+	// Campaign has a collection of issued coupons, that can be applied
 	// to the shopping card, based on a set of conditions and effects.
 	Campaign struct {
 		ID         uuid.UUID

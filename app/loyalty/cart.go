@@ -4,13 +4,13 @@ import "github.com/google/uuid"
 
 type (
 	// Cart represents the shopping basket
-	// of a customer of the pharmacy
+	// of a customer of the pharmacy.
 	Cart struct {
 		Items []Item
 	}
 
 	// Item represents the contents of the
-	// shopping basket. Each items holds a unique ID,
+	// shopping cart. Each items holds a unique ID,
 	// a name and other important data.
 	Item struct {
 		ID       uuid.UUID

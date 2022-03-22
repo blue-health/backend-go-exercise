@@ -3,7 +3,7 @@ package loyalty
 type (
 	// Condition can evaluate to a boolean value
 	// for a given cart. It is used to check if
-	// a coupon can be issued for the cart.
+	// a coupon can be applied to the cart.
 	Condition interface {
 		Name() string
 		Check(*Cart) bool
@@ -15,10 +15,10 @@ type (
 	// NeverCondition always returns false.
 	NeverCondition struct{}
 
-	// OrCondition returns a logical OR of all its child conditions.
+	// OrCondition returns a logical OR of all of its child conditions.
 	OrCondition struct{}
 
-	// AndCondition returns a logical AND of all its child conditions.
+	// AndCondition returns a logical AND of all of its child conditions.
 	AndCondition struct{}
 
 	// ContainsBrandCondition checks if the cart contains

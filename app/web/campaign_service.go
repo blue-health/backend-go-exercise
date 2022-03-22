@@ -7,8 +7,9 @@ import (
 	"github.com/go-chi/chi"
 )
 
-// Campaign web service handles issuing of the coupons.
+// Campaign web service manages coupon campaigns.
 type CampaignService struct {
+	// nolint:structcheck // for the exercise
 	campaigns []loyalty.Campaign
 }
 
