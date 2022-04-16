@@ -18,9 +18,30 @@ As the functional requirements set above should be trivial to implement, we focu
 
 ## Setup
 
-Please make sure you have recent versions of `go` and `make` installed on your local machine.
-  
-You can run this service with `make run`, build it with `make build`, test it with `make test`. Please take a look into the `Makefile` to see all available operations.
+1. Install [Golang](https://go.dev), [Make](https://www.gnu.org/software/make/) and [Docker](https://docs.docker.com/get-docker/).
+2. After cloning the repository, run `make` to verify you can build the Go app.
+3. Run `make database-up` to start the development database in a Docker container.
+4. Start the application using `make run`.
+5. Happy coding!
+
+The app exposes the REST API on port `8080`.
+
+If you would like to drop the database and its contents, run `make database-down` and then `make database-up` again to start with a clean database.
+
+If you would like to perform your SQL migrations, run `make -C tasks/migrate up`, and to roll them back, `make -C tasks/migrate down`.
+ 
+Please take a look into the `Makefile` to see all available operations.
+
+## File Structure
+
+The contents of this repo are structured in the following way:
+
+* `app/`: The application source files
+  * `account/`: The package containing the `account` domain model and business logic
+  * `storage/`: The package implementing persistend storage in PostgreSQL
+  * `web/`: The package exposing REST API for account management
+* `tasks/migrate/`: The source code and .sql files required for database migrations
+* `bin/`: Build artifacts (excluded from version control)
 
 ## Contact
 

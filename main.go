@@ -52,7 +52,7 @@ func main() {
 func run(ctx context.Context, cfg *config) error {
 	db, err := storage.NewPostgres(ctx, cfg.Database.DSN)
 	if err != nil {
-		return fmt.Errorf("failed to connect to database: %w", err)
+		return fmt.Errorf("failed to connect to the database: %w", err)
 	}
 
 	defer func() {

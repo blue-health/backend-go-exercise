@@ -8,9 +8,15 @@ require (
 )
 
 require (
+	github.com/golang-migrate/migrate/v4 v4.15.1
 	github.com/jmoiron/sqlx v1.3.4
 	github.com/kelseyhightower/envconfig v1.4.0
 	github.com/lib/pq v1.10.5
 )
 
-require golang.org/x/net v0.0.0-20220412020605-290c469a71a5 // indirect
+require (
+	github.com/hashicorp/errwrap v1.0.0 // indirect
+	github.com/hashicorp/go-multierror v1.1.0 // indirect
+	go.uber.org/atomic v1.6.0 // indirect
+	golang.org/x/net v0.0.0-20220412020605-290c469a71a5 // indirect
+)

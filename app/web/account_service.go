@@ -16,7 +16,7 @@ func NewAccountService(accountService account.Service) *AccountService {
 func (s *AccountService) Router() *chi.Mux {
 	r := chi.NewRouter()
 
-	r.Get("/my_route", nil)
+	r.Get("/my-route", nil)
 
 	return r
 }
