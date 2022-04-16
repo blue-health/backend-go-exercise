@@ -4,16 +4,18 @@ Welcome to the programming exercise for Golang Backend Developers! :)
 
 ## Your Task
 
-Your task is to complete the implementation of this very simple Golang microservice. This microservice manages **coupon campaigns**, and allows the customer to apply a coupon to his **shopping cart**. A campaign is a collection of coupons. It defines boolean **conditions** that check if a coupon can be applied to the given shopping cart, as well as **effects** which modify the shopping cart to apply the discount.
+Your task is to implement a very simple account management microservice using NestJS and TypeORM. It should at least be able to:
 
-In particular, you should:
+* Register new users using their email address, password, and name
+* Log the user in using their email address and password
+* Retrieve a list of all active users
+* Change a user's name
+* Delete a user
 
-1. Finish the implementation of the business logic in the `loyalty` package
-2. Finish the implementation of the REST API in the `web` package
-3. Provide some unit tests for the above packages
+You can but do not have to include tests. Please use this repository as a starting point for your implementation and employ appropriate best practices.
 
-The implementation does not need to be production ready or fully tested, however it should show your reasoning and engineering practices.
- 
+As the functional requirements set above should be trivial to implement, we focus our evaluation on the quality of your code and architecture. Generally, your goal should be to get the service as close as possible to a production-ready state. This could, for example, include adding proper logging capabilities, metrics or health checks.
+
 ## Setup
 
 Please make sure you have recent versions of `go` and `make` installed on your local machine.
