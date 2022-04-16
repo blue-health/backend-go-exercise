@@ -52,8 +52,6 @@ func run(cfg *config) error {
 		return fmt.Errorf("failed to create iofs: %w", err)
 	}
 
-	time.Sleep(cfg.Delay)
-
 	m, err := migrate.NewWithSourceInstance("iofs", d, cfg.Database.DSN)
 	if err != nil {
 		return fmt.Errorf("failed to create migration source: %w", err)
