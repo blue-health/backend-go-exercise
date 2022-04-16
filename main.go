@@ -76,14 +76,12 @@ func run(ctx context.Context, cfg *config) error {
 
 		log.Println("server is shutting down...")
 
-		var cancel context.CancelFunc
-
-		ctx, cancel = context.WithTimeout(ctx, cfg.Server.ShutdownTimeout)
+		sctx, cancel := context.WithTimeout(ctx, cfg.Server.ShutdownTimeout)
 		defer cancel()
 
 		server.SetKeepAlivesEnabled(false)
 
-		if err := server.Shutdown(ctx); err != nil {
+		if err := server.Shutdown(sctx); err != nil {
 			log.Fatalf("failed to gracefully shutdown server: %v", err)
 		}
 
