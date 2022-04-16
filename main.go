@@ -17,7 +17,7 @@ import (
 )
 
 // Any runtime configuration your app will require should
-// be placed here. This struct defines the environmental varialbles
+// be placed here. This struct defines the environmental variables
 // the program will look for. For instance, the database address will
 // be parsed from the GO_EXERCISE_DATABASE_DSN environmental variable.
 type config struct {
