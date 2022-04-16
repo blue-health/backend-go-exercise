@@ -57,4 +57,5 @@ linters:
     - wsl
 
 run:
+  go: "1.17"
   issues-exit-code: 1
