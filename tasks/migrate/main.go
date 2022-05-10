@@ -36,7 +36,7 @@ func main() {
 	time.Sleep(cfg.Delay)
 
 	if err := run(&cfg); err != nil {
-		log.Fatalf("failed: %v", err)
+		log.Fatalf("failed to migrate: %v", err)
 	}
 }
 
